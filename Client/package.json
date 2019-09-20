@@ -1,0 +1,44 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=19001'"
+  },
+  "dependencies": {
+    "@apollo/react-components": "^3.1.0",
+    "@apollo/react-hooks": "^3.0.1",
+    "@expo/vector-icons": "^10.0.5",
+    "apollo-boost": "^0.4.4",
+    "apollo-client": "2.6.4",
+    "apollo-client-preset": "^1.0.8",
+    "apollo-link-context": "^1.0.18",
+    "expo": "^34.0.1",
+    "graphql": "^14.4.2",
+    "native-base": "^2.13.5",
+    "react": "16.8.3",
+    "react-apollo": "^3.0.1",
+    "react-dom": "^16.8.6",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+    "react-native-animatable": "^1.3.2",
+    "react-native-web": "^0.11.4",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "^6.0.0",
+    "redux-devtools-extension": "^2.13.8",
+    "eslint": "^6.1.0",
+    "eslint-config-equimper": "^2.2.2",
+    "eslint-config-prettier": "^6.0.0",
+    "prettier": "^1.18.2",
+    "redux-logger": "^3.0.6",
+    "react-native-svg-transformer": "^0.13.0"
+  },
+  "private": true
+}
