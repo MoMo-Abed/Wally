@@ -32,7 +32,7 @@ app.use(
   graphqlExpress(req => ({
     schema,
     context: {
-      user: req.user
+      device: req.user
     }
   }))
 );

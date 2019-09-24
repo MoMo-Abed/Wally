@@ -3,12 +3,10 @@ import Images from "./Images";
 
 export default {
   RootQuery: {
-    user: Auth.user,
     getImages: Images.getImages
   },
   RootMutation: {
-    login: Auth.login,
-
-    createUser: Auth.createUser
+    CreateSaved: Images.CreateSaved,
+    CreateToken: Auth.CreateToken
   }
 };

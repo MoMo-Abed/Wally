@@ -9,12 +9,23 @@ type User {
     SavedImages: [Images!]!
 }
 
+type Auth {
+    token: String!
+  }
 
+
+type ImageUserLinks{
+    self:String,
+    html:String,
+}
 
 type ImagesUser{
     id: String,
     username:String,
-    name:String
+    name:String,
+    twitter_username:String,
+    portfolio_url:String,
+    links:ImageUserLinks
 }
 
 
@@ -33,6 +44,11 @@ type ImagesUrls{
     full: String
 }
 
+type Tags{
+    title:String,
+
+}
+
 type Images {
     id: String,
     created_at: String,
@@ -47,26 +63,78 @@ type Images {
     likes: Int,
     liked_by_user: Boolean,
     user: ImagesUser,
+    tags:[Tags]
 }
-type Auth {
-    token: String!
-  }
 
+input Image {
+    id: String,
+    created_at: String,
+    updated_at: String,
+    width: Int,
+    height: Int,
+    color: String,
+    description: String,
+    alt_description: String,
+    urls:ImageUrls ,
+    links: ImageLinks,
+    likes: Int,
+    liked_by_user: Boolean,
+    user: ImageUser,
+    tags: [Tag],
+}
+
+input ImageLinks{
+    self: String,
+    html: String,
+    download: String,
+    download_location: String
+}
+
+input ImageUrls{
+    small: String,
+    thumb: String,
+    raw: String,
+    full: String
+}
+
+input ImageUserLink{
+    self:String,
+    html:String,
+}
+
+input ImageUser{
+    id: String,
+    username:String,
+    name:String,
+    twitter_username:String,
+    portfolio_url:String,
+    links:ImageUserLink
+}
+
+input Tag{
+    title:String,
+
+}
+
+
+
+input DeviceInfo{
+    PhoneId:String
+    deviceName:String
+    Platform:String
+}
 
 type RootQuery {
-    login(email: String!, password: String!): AuthData!
     user: User!
-    getImages: [Images]
+    getImages(value:String!): [Images]
+    getSimilarImages(value:String!):[Images]
 }
 
 type RootMutation {
-    login(email: String!, password: String!): AuthData!
 
-    createUser(
-        email: String!,
-    name: String!,
-    password: String!,
-    ): Auth
+    CreateSaved(inputs:Image):Images,
+    CreateToken(inputs:DeviceInfo):Auth!
+
   
 }
 

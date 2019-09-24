@@ -1,14 +1,14 @@
 import jwt from "jsonwebtoken";
 
 import constants from "../Config/constants";
-import User from "../Models/user";
+import Device from "../Models/Device";
 
-export async function requireAuth(user) {
-  if (!user || !user._id) {
+export async function requireAuth(device) {
+  if (!device) {
     throw new Error("Unauthorized!");
   }
 
-  const me = await User.findById(user._id);
+  const me = await Device.findById(device._id);
 
   if (!me) {
     throw new Error("Unauthorized!");
