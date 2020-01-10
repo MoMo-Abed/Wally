@@ -40,15 +40,6 @@ export class MainHeader extends Component {
           </TouchableWithoutFeedback>
         </Left>
         <Right>
-          <TouchableWithoutFeedback>
-            <MaterialCommunityIcons
-              name="tooltip-edit"
-              size={30}
-              color="white"
-              style={_Styles.FilterIcon}
-            />
-          </TouchableWithoutFeedback>
-
           <Mutation mutation={CREATE_SAVED_IMAGE}>
             {(CreateSaved, error, data) => {
               console.log("error-----------", error);

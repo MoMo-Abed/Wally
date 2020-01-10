@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import { Button } from "native-base";
 import PropTypes from "prop-types";
-
+import { AntDesign } from "@expo/vector-icons";
 export class BtnMini extends Component {
   static propTypes = {
     OnSetPressed: PropTypes.func,
@@ -13,10 +13,13 @@ export class BtnMini extends Component {
     return (
       <View style={_Styles.Container}>
         <Button onPress={() => OnDownloadPressed()} style={_Styles.BtnCont}>
+          <AntDesign
+            style={{ marginRight: 10 }}
+            name="download"
+            color="white"
+            size={20}
+          />
           <Text style={_Styles.Text}>Download</Text>
-        </Button>
-        <Button onPress={() => OnSetPressed()} style={_Styles.BtnCont}>
-          <Text style={_Styles.Text}>Set</Text>
         </Button>
       </View>
     );
@@ -25,20 +28,19 @@ export class BtnMini extends Component {
 
 const _Styles = StyleSheet.create({
   Container: {
-    flexDirection: "row",
     width: "100%",
     marginTop: -40
   },
   BtnCont: {
-    width: "50%",
+    width: "70%",
     height: 50,
     borderRadius: 10,
     alignItems: "center",
-    backgroundColor: "#070B16",
+    backgroundColor: "green",
     justifyContent: "center",
-    borderRightColor: "gray",
     borderRightWidth: 2,
-    borderColor: "#F8DB01"
+    alignSelf: "center",
+    flexDirection: "row"
   },
   Text: {
     fontSize: 20,

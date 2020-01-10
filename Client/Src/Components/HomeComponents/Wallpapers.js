@@ -7,6 +7,7 @@ import { Query } from "@apollo/react-components";
 import GETIMAGES from "../../Graphql/Query/getImages";
 import { Send_Image_To_View } from "../../Redux/Action/MainActions";
 import { Actions } from "react-native-router-flux";
+import FastImage from "react-native-fast-image";
 
 export class Wallpapers extends Component {
   static propTypes = {
@@ -53,7 +54,6 @@ export class Wallpapers extends Component {
             if (response.data && response.data.getImages) {
               //Update the Array with The response
               Wallpapers = response.data.getImages;
-              console.log(Wallpapers);
               return (
                 <Content
                   contentContainerStyle={{ paddingBottom: 110 }}

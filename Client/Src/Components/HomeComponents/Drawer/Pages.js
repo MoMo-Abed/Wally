@@ -13,19 +13,9 @@ export class Pages extends Component {
           <Text style={_Styles.ListItemText}>Favourite</Text>
         </ListItem>
 
-        <ListItem onPress={() => Actions.History()} style={_Styles.ListItem}>
-          <MaterialIcons name="history" color="gray" size={20} />
-          <Text style={_Styles.ListItemText}>History</Text>
-        </ListItem>
-
-        <ListItem onPress={() => Actions.Settings()} style={_Styles.ListItem}>
+        <ListItem onPress={() => Actions.Settings()}>
           <MaterialIcons name="settings" color="gray" size={20} />
           <Text style={_Styles.ListItemText}>Setting</Text>
-        </ListItem>
-
-        <ListItem>
-          <Entypo name="instagram" color="gray" size={20} />
-          <Text style={_Styles.ListItemText}>our Instagram</Text>
         </ListItem>
       </List>
     );

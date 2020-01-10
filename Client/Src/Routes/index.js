@@ -3,7 +3,7 @@ import { Scene, Router, Stack, Actions } from "react-native-router-flux";
 import FirstUse from "../Components/FirstUse";
 import HomeMain from "../Components/HomeMain";
 import Fav from "../Components/HomeComponents/Drawer/Favourite";
-import History from "../Components/HomeComponents/Drawer/History";
+//import History from "../Components/HomeComponents/Drawer/History";
 import Settings from "../Components/HomeComponents/Drawer/Settings";
 import ViewWallPaper from "../Components/ViewWallPaper";
 import { getToken } from "../Utils/Auth";
@@ -29,7 +29,6 @@ export class index extends Component {
           <Scene key="main" hideNavBar>
             <Scene key="Home" hideNavBar component={HomeMain} />
             <Scene key="Favourite" hideNavBar component={Fav} />
-            <Scene key="History" hideNavBar component={History} />
             <Scene key="Settings" hideNavBar component={Settings} />
             <Scene key="ViewWallpaper" hideNavBar component={ViewWallPaper} />
           </Scene>

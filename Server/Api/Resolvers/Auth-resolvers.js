@@ -1,6 +1,7 @@
 import Device from "../../Models/Device";
 import jwt from "jsonwebtoken";
 import constants from "../../Config/constants";
+import { requireAuth } from "../../Services/auth";
 
 export default {
   CreateToken: async (_, { inputs }) => {
@@ -16,6 +17,16 @@ export default {
       return {
         token
       };
+    } catch (error) {
+      throw error;
+    }
+  },
+
+  user: async (_, args, { device }) => {
+    try {
+      const me = await requireAuth(device);
+      console.log(me);
+      return me;
     } catch (error) {
       throw error;
     }

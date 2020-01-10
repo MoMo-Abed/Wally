@@ -3,7 +3,7 @@ import { ApolloClient, HttpLink, InMemoryCache } from "apollo-boost";
 import { getToken } from "../Utils/Auth";
 // "http://10.0.3.2:7000/graphql"
 
-const httpLink = new HttpLink({ uri: "http://192.168.1.5:7000/graphql" });
+const httpLink = new HttpLink({ uri: "http://192.168.1.7:7000/graphql" });
 const authLink = setContext(async (req, { headers }) => {
   const token = await getToken();
   console.log(token);

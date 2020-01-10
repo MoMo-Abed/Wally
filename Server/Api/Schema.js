@@ -4,9 +4,9 @@ export default `
 type User {
     _id: ID!
     name: String!
-    email: String!
+    deviceName: String!
     password: String!
-    SavedImages: [Images!]!
+    savedImages: [Images]
 }
 
 type Auth {

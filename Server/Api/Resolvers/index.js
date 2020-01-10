@@ -3,7 +3,8 @@ import Images from "./Images";
 
 export default {
   RootQuery: {
-    getImages: Images.getImages
+    getImages: Images.getImages,
+    user: Auth.user
   },
   RootMutation: {
     CreateSaved: Images.CreateSaved,

@@ -7,7 +7,6 @@ export async function requireAuth(device) {
   if (!device) {
     throw new Error("Unauthorized!");
   }
-
   const me = await Device.findById(device._id);
 
   if (!me) {
